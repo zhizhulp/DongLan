@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
+
+        <LinearLayout
+            android:id="@+id/dialog_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dialog_bg_white"
+            android:gravity="center_horizontal"
+            android:minHeight="315dp"
+            android:minWidth="279dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dialog_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/consult_join_type_text"
+                android:textColor="@color/colorGray21"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/dialog_consult_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/gym_join_tv"
+                    style="@style/BtnCommitStyle"
+                    android:layout_width="160dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="34dp"
+                    android:background="@drawable/btn_bg_gray_empty_deep"
+                    android:gravity="center"
+                    android:text="@string/consult_gym_join_text"
+                    android:textColor="@color/colorGray22"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/gym_jteamwork_tv"
+                    style="@style/BtnCommitStyle"
+                    android:layout_width="160dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="34dp"
+                    android:background="@drawable/btn_bg_gray_empty_deep"
+                    android:gravity="center"
+                    android:text="@string/consult_gym_teamwork_text"
+                    android:textColor="@color/colorGray22"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/gym_admin_tv"
+                    style="@style/BtnCommitStyle"
+                    android:layout_width="160dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="34dp"
+                    android:background="@drawable/btn_bg_gray_empty_deep"
+                    android:gravity="center"
+                    android:text="@string/consult_gym_admin_text"
+                    android:textColor="@color/colorGray22"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dialog_recommend_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_text"
+                        android:textColor="@color/colorGray21"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/name_ev"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/name_hint_text"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorGray22"
+                        android:textColor="@color/colorGray22"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sex_text"
+                        android:textColor="@color/colorGray21"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/text_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="25dp"
+                        android:background="@drawable/male_blue"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/text_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/text_male"
+                        android:background="@drawable/img_sex2"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tel_text"
+                        android:textColor="@color/colorGray21"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/tel_ev"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/tel_hint_text"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorGray22"
+                        android:textColor="@color/colorGray22"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/remark_text"
+                        android:textColor="@color/colorGray21"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/remark_ev"
+                        style="@style/MyEditText"
+                        android:layout_width="230dp"
+                        android:layout_height="75dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_search_bg"
+                        android:gravity="top"
+                        android:textColorHint="@color/colorGray22"
+                        android:padding="3dp"
+                        android:hint="@string/remark_hint_text"
+                        android:lines="3"
+                        android:maxLength="200"
+                        android:textColor="@color/colorGray22"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_consult_layout"
+                style="@style/BtnCommitStyle1"
+                android:layout_width="240dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_consult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/consult_text"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/close_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/dialog_layout"
+            android:background="@drawable/img_close" />
+    </RelativeLayout>
+
+</LinearLayout>

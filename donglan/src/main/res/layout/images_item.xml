@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<cn.jzvd.JZVideoPlayerStandard-->
+    <!--android:id="@+id/videoplayer"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="240dp"-->
+    <!--android:layout_marginLeft="15dp"-->
+    <!--android:layout_marginRight="15dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:visibility="gone" />-->
+    <RelativeLayout
+        android:id="@+id/rl_item"
+        android:layout_width="106dp"
+        android:layout_height="106dp">
+
+        <ImageView
+            android:id="@+id/image_item"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/pl_sta"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/publish_status"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/item_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@null"
+        android:clickable="false"
+        android:src="@drawable/publish_circle" />
+
+    <ImageView
+        android:id="@+id/item_select_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@null"
+        android:clickable="false"
+        android:src="@drawable/publish_circle_blue"
+        android:visibility="gone" />
+
+</RelativeLayout>

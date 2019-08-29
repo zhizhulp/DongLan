@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.cjt2325.cameralibrary.JCameraView
+        android:id="@+id/jcameraview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        duration_max="10000"
+        iconMargin="20dp"
+        iconLeft="@drawable/ic_back"
+        iconRight="@drawable/ic_photo"
+        iconSize="30dp"
+        iconSrc="@drawable/ic_camera"/>
+
+
+</RelativeLayout>

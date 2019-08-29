@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<com.cn.danceland.myapplication.view.DongLanTitleView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:titleText="我的租柜"
+    ></com.cn.danceland.myapplication.view.DongLanTitleView>
+
+    <ListView
+        android:id="@+id/cabinet_lv"
+        android:layout_below="@+id/cabinet_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+
+        <include
+            android:id="@+id/rl_error"
+            layout="@layout/no_info_layout"
+            android:visibility="gone"
+            />
+
+
+</LinearLayout>

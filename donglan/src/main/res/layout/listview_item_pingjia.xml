@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_item"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_setting_item_selector"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_my_avatar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称"
+                android:textColor="@color/dl_gery"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2014-7-2 12:30:01"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="评分："
+                android:textColor="#000"
+                android:visibility="gone"
+                android:textSize="14sp" />
+
+            <com.willy.ratingbar.ScaleRatingBar
+
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/sr_pingfen1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:focusable="false"
+                app:srb_clearRatingEnabled="true"
+                app:srb_clickable="false"
+                app:srb_drawableEmpty="@drawable/img_xin_sr1"
+                app:srb_drawableFilled="@drawable/img_xin_sr2"
+                app:srb_isIndicator="false"
+                app:srb_rating="0"
+                app:srb_scrollable="false"
+                app:srb_starHeight="18dp"
+                app:srb_starWidth="18dp"
+                app:srb_stepSize="1"></com.willy.ratingbar.ScaleRatingBar>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--    <io.github.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:text="这是一个评论哈哈哈哈爱好哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈爱好爱好哈哈哈哈哈"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            emojicon:emojiconSize="20sp" />-->
+
+    <hani.momanii.supernova_emoji_library.Helper.EmojiconTextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:text="这是一个评论哈哈哈哈爱好哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈爱好爱好哈哈哈哈哈"
+        android:textColor="@color/color_dl_deep_blue"
+        android:textSize="14sp"
+        emojicon:emojiconSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray23"
+    android:orientation="vertical">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="添加推荐人" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_bg_phone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:text="姓名"
+            android:textColor="#6d819c"
+            android:textSize="12sp" />
+
+
+        <com.cn.danceland.myapplication.view.ContainsEmojiEditText
+            android:id="@+id/et_name"
+            style="@style/EtStyle"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:hint="请输入姓名"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_bg_phone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:text="性别"
+            android:textColor="#6d819c"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/tv_sex"
+            style="@style/EtStyle"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/color_dl_black"
+            android:layout_marginTop="6dp"
+            android:text="请选择性别"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_phone"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_bg_phone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:text="手机号"
+            android:textColor="#6d819c"
+            android:textSize="12sp" />
+
+
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/EtStyle"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+
+            android:hint="请输入您的手机号"
+            android:inputType="phone" />
+    </LinearLayout>
+
+</LinearLayout>
+   <com.cn.danceland.myapplication.view.CommitButton
+       android:id="@+id/dlbtn_commit"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:text="确定"></com.cn.danceland.myapplication.view.CommitButton>
+
+
+</LinearLayout>

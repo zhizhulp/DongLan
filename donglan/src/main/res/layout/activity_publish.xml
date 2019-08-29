@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray23"
+    android:orientation="vertical">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="发布动态" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/publish_status_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/white_rounded_corners_bg"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="false">
+
+                <hani.momanii.supernova_emoji_library.Helper.EmojiconEditText
+                    android:id="@+id/publish_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@color/transparent"
+                    android:hint="晒改变，晒心得，晒运动"
+                    android:maxLength="1500"
+                    android:padding="15dp"
+                    android:textColor="@color/colorGray21"
+                    android:textColorHint="@color/colorGray21"
+                    android:textSize="14sp"
+                    emojicon:emojiconSize="18sp" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/publish_mid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/publish_status_cardview"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/white_rounded_corners_bg"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:id="@+id/publish_mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.cn.danceland.myapplication.view.NoScrollGridView
+                        android:id="@+id/grid_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="4dp"
+                        android:numColumns="3"
+                        android:scrollbars="none"
+                        android:visibility="visible" />
+
+                    <cn.jzvd.JZVideoPlayerStandard
+                        android:id="@+id/videoplayer"
+                        android:layout_width="150dp"
+                        android:layout_height="240dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/publish_mid_layout">
+
+                <ImageView
+                    android:id="@+id/location_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/publish_location" />
+
+                <TextView
+                    android:id="@+id/publish_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/location_img"
+                    android:text="所在位置"
+                    android:textColor="@color/colorGray22" />
+
+                <TextView
+                    android:id="@+id/publish_share1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="同步到健身圈"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@+id/publish_share1"
+                    android:background="@drawable/publish_circle"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

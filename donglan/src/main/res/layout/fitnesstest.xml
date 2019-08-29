@@ -1,0 +1,2736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray23"
+    android:orientation="vertical">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        app:moreText="分享"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="人体成分检测" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/rl_error"
+                layout="@layout/no_data_layout"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/sv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/detail_cradview"
+                    android:layout_width="match_parent"
+                    android:layout_height="124dp"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/white_rounded_corners_bg"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="5dp"
+                    app:cardPreventCornerOverlap="false">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="测试日期:"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/test_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="2018-8-8"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="操作人员:"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/test_person"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="2018-8-8"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="您的评分:"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/test_score"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="92.4"
+                                android:textColor="@color/home_enter_total_text_color"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/test_classify"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="健康匀称型"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="204dp"
+                    android:layout_below="@+id/detail_cradview"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/body_image" />
+
+                        <lecho.lib.hellocharts.view.PieChartView
+                            android:id="@+id/pie_chart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:gravity="bottom"
+                        android:orientation="vertical"
+                        android:paddingBottom="34dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/blue_round_bg" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:singleLine="true"
+                                android:text="水分"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/moisture_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:singleLine="true"
+                                android:text="0.3kg(62.3%)"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/yellow_round_bg" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:singleLine="true"
+                                android:text="脂肪"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/fat_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:singleLine="true"
+                                android:text="0.3kg(62.3%)"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/purple_round_bg" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:singleLine="true"
+                                android:text="骨质"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/bone_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:singleLine="true"
+                                android:text="0.3kg(62.3%)"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/green_round_bg" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:singleLine="true"
+                                android:text="蛋白质"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/protein_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6dp"
+                                android:singleLine="true"
+                                android:text="0.3kg(62.3%)"
+                                android:textColor="@color/colorGray22"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/white"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="15dp"
+                            android:text="身体年龄"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:paddingRight="15dp"
+                            android:text="--" />
+                    </RelativeLayout>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/white_rounded_corners_bg"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="5dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_heightcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="12dp"
+                                android:text="体重管理"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/home_menu_bg_color" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/height_mubiao"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="目标体重"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_height_mubiao"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/height_kongzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="体重控制"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_height_kongzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/fat_kongzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="脂肪控制"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_fat_kongzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/muscle_kongzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="肌肉控制"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_muscle_kongzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/white_rounded_corners_bg"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="5dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_fatcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="12dp"
+                                android:text="肥胖分析"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/home_menu_bg_color" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/height_dengji"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="体重等级"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_height_dengji"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/fat_baifenbi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="体脂百分比"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_fat_baifenbi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/fat_yaotunbi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="腰臀比"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_fat_yaotunbi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/white_rounded_corners_bg"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="5dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_yingyang"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="12dp"
+                                android:text="营养分析"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/home_menu_bg_color" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/danbaizhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="蛋白质营养"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_danbaizhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/fat_yingyang"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="脂肪营养"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_fat_yingyang"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/wujiyan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="无机盐营养"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_wujiyan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/jichudaixie"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="基础代谢(BMR)"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_jichudaixie"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/white_rounded_corners_bg"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="5dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_zhifang"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="12dp"
+                                android:text="脂肪分析"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/home_menu_bg_color" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/zuoshangzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="左上肢脂肪"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_zuoshangzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/youshangzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="右上肢脂肪"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_youshangzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/zuoxiazhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="左下肢脂肪"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_zuoxiazhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/youxiazhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="右下肢脂肪"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_youxiazhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/qugan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="躯干脂肪总量"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_qugan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/neizang"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="内脏脂肪指数"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_neizang"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/white_rounded_corners_bg"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="5dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_shuifen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="12dp"
+                                android:text="水分分析"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/home_menu_bg_color" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/shuifenlv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="身体水分率"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_shuifenlv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/neiye"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="细胞内液"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_neiye"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/waiye"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="细胞外液"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_waiye"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/zuoshangzhishuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="左上肢水分"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_zuoshangzhishuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/youshangzhishuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="右上肢水分"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_youshangzhishuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/zuoxiazhishuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="左下肢水分"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_zuoxiazhishuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/youxiazhishuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="右下肢水分"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_youxiazhishuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/xishu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="水肿系数"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_xishu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="--" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/white_rounded_corners_bg"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="5dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="12dp"
+                                android:text="基本评估"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/home_menu_bg_color" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="11dp"
+                                android:text="体重(%)"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="12sp" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_triangle_mark1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="@dimen/h2"
+                                    android:background="@drawable/fitnesstest_chizi" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="35dp"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/iv_triangle1"
+                                        android:layout_width="20dp"
+                                        android:layout_height="10dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/fitnesstest_yellow_jiantou" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="11dp"
+                                android:text="肌肉(%)"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="12sp" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_triangle_mark2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="@dimen/h2"
+                                    android:background="@drawable/fitnesstest_chizi" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="35dp"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/iv_triangle2"
+                                        android:layout_width="20dp"
+                                        android:layout_height="10dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/fitnesstest_yellow_jiantou" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="11dp"
+                                android:text="体脂百分比(%)"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="12sp" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_triangle_mark3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="@dimen/h2"
+                                    android:background="@drawable/fitnesstest_chizi" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="35dp"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/iv_triangle3"
+                                        android:layout_width="20dp"
+                                        android:layout_height="10dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/fitnesstest_yellow_jiantou" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="11dp"
+                                android:text="骨质(%)"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="12sp" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_triangle_mark4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="@dimen/h2"
+                                    android:background="@drawable/fitnesstest_chizi" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="35dp"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/iv_triangle4"
+                                        android:layout_width="20dp"
+                                        android:layout_height="10dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/fitnesstest_yellow_jiantou" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="11dp"
+                                android:text="总水分(%)"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="12sp" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_triangle_mark5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="@dimen/h2"
+                                    android:background="@drawable/fitnesstest_chizi" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="35dp"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/iv_triangle5"
+                                        android:layout_width="20dp"
+                                        android:layout_height="10dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/fitnesstest_yellow_jiantou" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="11dp"
+                                android:text="骨骼肌(%)"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="12sp" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_triangle_mark6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="@dimen/h2"
+                                    android:background="@drawable/fitnesstest_chizi" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="35dp"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/iv_triangle6"
+                                        android:layout_width="20dp"
+                                        android:layout_height="10dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/fitnesstest_yellow_jiantou" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="11dp"
+                                android:text="体质指数KG/M2"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="12sp" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_triangle_mark7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="@dimen/h2"
+                                    android:background="@drawable/fitnesstest_chizi" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="35dp"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/iv_triangle7"
+                                        android:layout_width="20dp"
+                                        android:layout_height="10dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/fitnesstest_yellow_jiantou" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="11dp"
+                                android:text="腰臀比(%)"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="12sp" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_triangle_mark8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="@dimen/h2"
+                                    android:background="@drawable/fitnesstest_chizi" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="35dp"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/iv_triangle8"
+                                        android:layout_width="20dp"
+                                        android:layout_height="10dp"
+                                        android:scaleType="fitXY"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/fitnesstest_yellow_jiantou" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/white_rounded_corners_bg"
+                        android:visibility="gone"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="5dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="12dp"
+                                android:text="基本评估"
+                                android:textColor="@color/colorGray21"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/home_menu_bg_color" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tizhong"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="16dp"
+                                    android:paddingTop="11dp"
+                                    android:text="体重"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_tizhong"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/tizhong"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingRight="16dp"
+                                    android:text="正常"
+                                    android:textSize="12sp" />
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/base_line1_cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_below="@+id/tizhong"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/white_rounded_corners_bg"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="3dp"
+                                    app:cardPreventCornerOverlap="false">
+
+                                    <ProgressBar
+                                        android:id="@+id/base_line1"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/horizontal_progress_bg"
+                                        android:max="100"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/green_horizontal_progressbar" />
+                                </android.support.v7.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/tv_line1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/base_line1_cv"
+                                    android:layout_marginTop="5dp"
+                                    android:text="56kg"
+                                    android:textSize="12sp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/jirou"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="16dp"
+                                    android:paddingTop="11dp"
+                                    android:text="肌肉"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_jirou"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/jirou"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingRight="16dp"
+                                    android:text="正常"
+                                    android:textSize="12sp" />
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/base_line2_cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_below="@+id/jirou"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/white_rounded_corners_bg"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="3dp"
+                                    app:cardPreventCornerOverlap="false">
+
+                                    <ProgressBar
+                                        android:id="@+id/base_line2"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/horizontal_progress_bg"
+                                        android:max="100"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/green_horizontal_progressbar" />
+                                </android.support.v7.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/tv_line2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/base_line2_cv"
+                                    android:layout_marginTop="5dp"
+                                    android:text="10kg"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tizhilv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="16dp"
+                                    android:paddingTop="11dp"
+                                    android:text="体脂百分比"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_tizhilv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/tizhilv"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingRight="16dp"
+                                    android:text="正常"
+                                    android:textSize="12sp" />
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/base_line3_cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_below="@+id/tizhilv"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/white_rounded_corners_bg"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="3dp"
+                                    app:cardPreventCornerOverlap="false">
+
+                                    <ProgressBar
+                                        android:id="@+id/base_line3"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/horizontal_progress_bg"
+                                        android:max="100"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/green_horizontal_progressbar" />
+
+                                </android.support.v7.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/tv_line3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/base_line3_cv"
+                                    android:layout_marginTop="5dp"
+                                    android:text="20%"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/guzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="16dp"
+                                    android:paddingTop="11dp"
+                                    android:text="骨质"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_guzhi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/guzhi"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingRight="16dp"
+                                    android:text="正常"
+                                    android:textSize="12sp" />
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/base_line4_cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_below="@+id/guzhi"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/white_rounded_corners_bg"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="3dp"
+                                    app:cardPreventCornerOverlap="false">
+
+                                    <ProgressBar
+                                        android:id="@+id/base_line4"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/horizontal_progress_bg"
+                                        android:max="100"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/green_horizontal_progressbar" />
+
+                                </android.support.v7.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/tv_line4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/base_line4_cv"
+                                    android:layout_marginTop="5dp"
+                                    android:text="3.8"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/zongshuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="16dp"
+                                    android:paddingTop="11dp"
+                                    android:text="总水分"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_zongshuifen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/zongshuifen"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingRight="16dp"
+                                    android:text="正常"
+                                    android:textSize="12sp" />
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/base_line5_cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_below="@+id/zongshuifen"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/white_rounded_corners_bg"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="3dp"
+                                    app:cardPreventCornerOverlap="false">
+
+                                    <ProgressBar
+                                        android:id="@+id/base_line5"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/horizontal_progress_bg"
+                                        android:max="100"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/green_horizontal_progressbar" />
+
+                                </android.support.v7.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/tv_line5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/base_line5_cv"
+                                    android:layout_marginTop="5dp"
+                                    android:text="33"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/gugeji"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="16dp"
+                                    android:paddingTop="11dp"
+                                    android:text="骨骼肌"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_gugeji"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/gugeji"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingRight="16dp"
+                                    android:text="正常"
+                                    android:textSize="12sp" />
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/base_line6_cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_below="@+id/gugeji"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/white_rounded_corners_bg"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="3dp"
+                                    app:cardPreventCornerOverlap="false">
+
+                                    <ProgressBar
+                                        android:id="@+id/base_line6"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/horizontal_progress_bg"
+                                        android:max="100"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/green_horizontal_progressbar" />
+
+                                </android.support.v7.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/tv_line6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/base_line6_cv"
+                                    android:layout_marginTop="5dp"
+                                    android:text="18.5"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tizhishu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="16dp"
+                                    android:paddingTop="11dp"
+                                    android:text="体质指数"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_tizhishu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/tizhishu"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingRight="16dp"
+                                    android:text="正常"
+                                    android:textSize="12sp" />
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/base_line7_cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_below="@+id/tizhishu"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/white_rounded_corners_bg"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="3dp"
+                                    app:cardPreventCornerOverlap="false">
+
+                                    <ProgressBar
+                                        android:id="@+id/base_line7"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/horizontal_progress_bg"
+                                        android:max="100"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/green_horizontal_progressbar" />
+
+                                </android.support.v7.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/tv_line7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/base_line7_cv"
+                                    android:layout_marginTop="5dp"
+                                    android:text="19.5"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/edit_search_bg"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/yaotunbi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="16dp"
+                                    android:paddingTop="11dp"
+                                    android:text="腰臀比"
+                                    android:textColor="@color/colorGray22"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_yaotunbi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/yaotunbi"
+                                    android:layout_alignParentRight="true"
+                                    android:paddingRight="16dp"
+                                    android:text="正常"
+                                    android:textSize="12sp" />
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/base_line8_cv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_below="@+id/yaotunbi"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/white_rounded_corners_bg"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="3dp"
+                                    app:cardPreventCornerOverlap="false">
+
+                                    <ProgressBar
+                                        android:id="@+id/base_line8"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/horizontal_progress_bg"
+                                        android:max="100"
+                                        android:progress="100"
+                                        android:progressDrawable="@drawable/green_horizontal_progressbar" />
+
+                                </android.support.v7.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/tv_line8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/base_line8_cv"
+                                    android:layout_marginTop="5dp"
+                                    android:text="0.89"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="16dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="5dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="12dp"-->
+                    <!--android:text="基本评估"-->
+                    <!--android:textColor="@color/colorGray21"-->
+                    <!--android:textSize="14sp" />-->
+
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/home_menu_bg_color" />-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="16dp"-->
+                    <!--android:background="@drawable/edit_search_bg"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tizhong"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingTop="11dp"-->
+                    <!--android:text="体重"-->
+                    <!--android:textColor="@color/colorGray22"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_tizhong"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/tizhong"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:text="正常"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/base_line1_cv"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="10dp"-->
+                    <!--android:layout_below="@+id/tizhong"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="3dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<ProgressBar-->
+                    <!--android:id="@+id/base_line1"-->
+                    <!--style="?android:attr/progressBarStyleHorizontal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/horizontal_progress_bg"-->
+                    <!--android:max="100"-->
+                    <!--android:progress="100"-->
+                    <!--android:progressDrawable="@drawable/green_horizontal_progressbar" />-->
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_line1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/base_line1_cv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="56kg"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="16dp"-->
+                    <!--android:background="@drawable/edit_search_bg"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/jirou"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingTop="11dp"-->
+                    <!--android:text="肌肉"-->
+                    <!--android:textColor="@color/colorGray22"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_jirou"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/jirou"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:text="正常"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/base_line2_cv"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="10dp"-->
+                    <!--android:layout_below="@+id/jirou"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="3dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<ProgressBar-->
+                    <!--android:id="@+id/base_line2"-->
+                    <!--style="?android:attr/progressBarStyleHorizontal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/horizontal_progress_bg"-->
+                    <!--android:max="100"-->
+                    <!--android:progress="100"-->
+                    <!--android:progressDrawable="@drawable/green_horizontal_progressbar" />-->
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_line2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/base_line2_cv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="10kg"-->
+                    <!--android:textSize="12sp" />-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="16dp"-->
+                    <!--android:background="@drawable/edit_search_bg"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tizhilv"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingTop="11dp"-->
+                    <!--android:text="体脂百分比"-->
+                    <!--android:textColor="@color/colorGray22"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_tizhilv"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/tizhilv"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:text="正常"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/base_line3_cv"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="10dp"-->
+                    <!--android:layout_below="@+id/tizhilv"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="3dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<ProgressBar-->
+                    <!--android:id="@+id/base_line3"-->
+                    <!--style="?android:attr/progressBarStyleHorizontal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/horizontal_progress_bg"-->
+                    <!--android:max="100"-->
+                    <!--android:progress="100"-->
+                    <!--android:progressDrawable="@drawable/green_horizontal_progressbar" />-->
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_line3"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/base_line3_cv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="20%"-->
+                    <!--android:textSize="12sp" />-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="16dp"-->
+                    <!--android:background="@drawable/edit_search_bg"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/guzhi"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingTop="11dp"-->
+                    <!--android:text="骨质"-->
+                    <!--android:textColor="@color/colorGray22"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_guzhi"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/guzhi"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:text="正常"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/base_line4_cv"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="10dp"-->
+                    <!--android:layout_below="@+id/guzhi"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="3dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<ProgressBar-->
+                    <!--android:id="@+id/base_line4"-->
+                    <!--style="?android:attr/progressBarStyleHorizontal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/horizontal_progress_bg"-->
+                    <!--android:max="100"-->
+                    <!--android:progress="100"-->
+                    <!--android:progressDrawable="@drawable/green_horizontal_progressbar" />-->
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_line4"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/base_line4_cv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="3.8"-->
+                    <!--android:textSize="12sp" />-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="16dp"-->
+                    <!--android:background="@drawable/edit_search_bg"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/zongshuifen"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingTop="11dp"-->
+                    <!--android:text="总水分"-->
+                    <!--android:textColor="@color/colorGray22"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_zongshuifen"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/zongshuifen"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:text="正常"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/base_line5_cv"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="10dp"-->
+                    <!--android:layout_below="@+id/zongshuifen"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="3dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<ProgressBar-->
+                    <!--android:id="@+id/base_line5"-->
+                    <!--style="?android:attr/progressBarStyleHorizontal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/horizontal_progress_bg"-->
+                    <!--android:max="100"-->
+                    <!--android:progress="100"-->
+                    <!--android:progressDrawable="@drawable/green_horizontal_progressbar" />-->
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_line5"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/base_line5_cv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="33"-->
+                    <!--android:textSize="12sp" />-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="16dp"-->
+                    <!--android:background="@drawable/edit_search_bg"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/gugeji"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingTop="11dp"-->
+                    <!--android:text="骨骼肌"-->
+                    <!--android:textColor="@color/colorGray22"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_gugeji"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/gugeji"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:text="正常"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/base_line6_cv"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="10dp"-->
+                    <!--android:layout_below="@+id/gugeji"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="3dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<ProgressBar-->
+                    <!--android:id="@+id/base_line6"-->
+                    <!--style="?android:attr/progressBarStyleHorizontal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/horizontal_progress_bg"-->
+                    <!--android:max="100"-->
+                    <!--android:progress="100"-->
+                    <!--android:progressDrawable="@drawable/green_horizontal_progressbar" />-->
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_line6"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/base_line6_cv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="18.5"-->
+                    <!--android:textSize="12sp" />-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="16dp"-->
+                    <!--android:background="@drawable/edit_search_bg"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tizhishu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingTop="11dp"-->
+                    <!--android:text="体质指数"-->
+                    <!--android:textColor="@color/colorGray22"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_tizhishu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/tizhishu"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:text="正常"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/base_line7_cv"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="10dp"-->
+                    <!--android:layout_below="@+id/tizhishu"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="3dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<ProgressBar-->
+                    <!--android:id="@+id/base_line7"-->
+                    <!--style="?android:attr/progressBarStyleHorizontal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/horizontal_progress_bg"-->
+                    <!--android:max="100"-->
+                    <!--android:progress="100"-->
+                    <!--android:progressDrawable="@drawable/green_horizontal_progressbar" />-->
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_line7"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/base_line7_cv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="19.5"-->
+                    <!--android:textSize="12sp" />-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_marginBottom="16dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="16dp"-->
+                    <!--android:background="@drawable/edit_search_bg"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/yaotunbi"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingTop="11dp"-->
+                    <!--android:text="腰臀比"-->
+                    <!--android:textColor="@color/colorGray22"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_yaotunbi"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignBottom="@+id/yaotunbi"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:text="正常"-->
+                    <!--android:textSize="12sp" />-->
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--android:id="@+id/base_line8_cv"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="10dp"-->
+                    <!--android:layout_below="@+id/yaotunbi"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:background="@drawable/white_rounded_corners_bg"-->
+                    <!--app:cardCornerRadius="6dp"-->
+                    <!--app:cardElevation="3dp"-->
+                    <!--app:cardPreventCornerOverlap="false">-->
+
+                    <!--<ProgressBar-->
+                    <!--android:id="@+id/base_line8"-->
+                    <!--style="?android:attr/progressBarStyleHorizontal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/horizontal_progress_bg"-->
+                    <!--android:max="100"-->
+                    <!--android:progress="100"-->
+                    <!--android:progressDrawable="@drawable/green_horizontal_progressbar" />-->
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_line8"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/base_line8_cv"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="0.89"-->
+                    <!--android:textSize="12sp" />-->
+                    <!--</RelativeLayout>-->
+                    <!--</LinearLayout>-->
+                    <!--</android.support.v7.widget.CardView>-->
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

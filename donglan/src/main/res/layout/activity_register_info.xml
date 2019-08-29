@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_finish"
+
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="设置个人信息"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:background="@color/dl_gery"
+        />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_below="@+id/text_finish"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="希望通过几个问题，让我们更了解你！"
+        />
+
+    <LinearLayout
+        android:id="@+id/text_info"
+        android:orientation="horizontal"
+        android:layout_marginTop="29dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称"
+                android:textSize="18sp"
+                android:layout_marginRight="25dp"
+                android:layout_alignParentRight="true"
+                />
+            <TextView
+                android:id="@+id/sex"
+                android:layout_below="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:layout_alignParentRight="true"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/birthday"
+                android:layout_below="@+id/sex"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你的出生年月"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/height"
+                android:layout_below="@+id/birthday"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你的身高"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/eight"
+                android:layout_below="@+id/height"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你的体重"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_alignParentLeft="true"
+                android:text="点击输入昵称"
+                android:textColor="@color/color_dl_yellow"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:maxEms="6"
+                android:ellipsize="end"
+                />
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_below="@id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text_male"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/male_blue"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="18sp"
+                    />
+                <TextView
+                    android:id="@+id/text_female"
+                    android:background="@drawable/female_gray"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/text_male"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:id="@+id/text_birthday"
+                android:layout_below="@+id/text_male"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1990年12月10日"
+                android:textColor="@color/color_dl_yellow"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/text_height"
+                android:layout_below="@+id/text_birthday"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="170 cm"
+                android:textColor="@color/color_dl_yellow"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/text_weight"
+                android:layout_below="@+id/text_height"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="55 kg"
+                android:textColor="@color/color_dl_yellow"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/button"
+        style="@style/BtnCommitStyle"
+        android:layout_marginTop="34dp"
+        android:textSize="22sp"
+        android:src="@mipmap/login_button"
+        android:textColor="@color/white"
+        android:text="保存"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_below="@+id/text_info"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

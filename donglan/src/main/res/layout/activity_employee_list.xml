@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:id="@+id/dl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="教练团队"></com.cn.danceland.myapplication.view.DongLanTitleView>
+
+    <ListView
+        android:id="@+id/listview"
+        android:dividerHeight="0dp"
+        android:divider="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+    <include
+        android:id="@+id/rl_no_info"
+        layout="@layout/no_info_layout"
+        android:visibility="gone"
+
+        />
+</LinearLayout>

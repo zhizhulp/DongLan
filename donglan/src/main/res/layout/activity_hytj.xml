@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+  <com.cn.danceland.myapplication.view.DongLanTitleView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:titleText="会员推荐"></com.cn.danceland.myapplication.view.DongLanTitleView>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pullToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/transparent"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:scrollingCache="false"
+        ptr:ptrDrawable="@drawable/listview_loading_anim"
+        ptr:ptrHeaderBackground="#00000000"
+        ptr:ptrHeaderTextColor="#999999"
+        ptr:ptrRefreshableViewBackground="#00000000"
+        ptr:ptrScrollingWhileRefreshingEnabled="true"
+        />
+    <include layout="@layout/no_info_layout"
+        android:id="@+id/rl_no_info"
+        android:visibility="gone"
+
+        />
+</LinearLayout>

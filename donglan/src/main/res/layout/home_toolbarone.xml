@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_toolbarone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/meun_cradview"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:cardPreventCornerOverlap="false"
+        android:background="@drawable/white_rounded_corners_bg"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/fitness_diary_pink_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|left"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/fitness_diary_pink_img" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/fitness_diary_text"
+                    android:textColor="@color/colorGray0"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/home_menu_bg_color" />
+
+            <LinearLayout
+                android:id="@+id/punch_list_pink_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|left"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/punch_list_pink_img" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/punch_list_text"
+                    android:textColor="@color/colorGray0"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <!--<ImageView-->
+    <!--android:id="@+id/a_imd"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/baby_blue"-->
+    <!--android:padding="8dp"-->
+    <!--android:layout_marginRight="4dp"-->
+    <!--android:src="@drawable/punch_list_white_img"-->
+    <!--android:layout_alignParentRight="true"/>-->
+    <!--<ImageView-->
+    <!--android:id="@+id/a_imper"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="8dp"-->
+    <!--android:background="@color/baby_blue"-->
+    <!--android:src="@drawable/punch_list_pink_img"-->
+    <!--android:layout_toLeftOf="@id/a_imd"/>-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/navigation_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/baby_blue"-->
+    <!--android:gravity="center|start"-->
+    <!--android:layout_margin="8dp"-->
+    <!--android:layout_toLeftOf="@id/a_imper"-->
+    <!--android:orientation="horizontal">-->
+    <!--<TextView-->
+    <!--android:id="@+id/toolbar_search"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="4dp"-->
+    <!--android:drawableLeft="@drawable/fitness_diary_pink_img"-->
+    <!--android:gravity="center|start"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:text="外卖"-->
+    <!--android:textColor="#fff" />-->
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:src="@drawable/fitness_diary_white_img"-->
+    <!--/>-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_below="@+id/navigation_layout"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_marginTop="12dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/toolbarheader">-->
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="8dp"-->
+    <!--android:layout_weight="1">-->
+    <!--<ImageView-->
+    <!--android:id="@+id/scan"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="5dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:src="@drawable/ic_photography"-->
+    <!--/>-->
+    <!--<TextView-->
+    <!--android:layout_below="@+id/scan"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:text="扫一扫"/>-->
+    <!--</RelativeLayout>-->
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="8dp"-->
+    <!--android:layout_weight="1">-->
+    <!--<ImageView-->
+    <!--android:id="@+id/payment"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:padding="5dp"-->
+    <!--android:src="@drawable/ic_video"/>-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/payment"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:text="付钱"/>-->
+    <!--</RelativeLayout>-->
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="8dp"-->
+    <!--android:layout_weight="1">-->
+    <!--<ImageView-->
+    <!--android:id="@+id/transfer"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:padding="5dp"-->
+    <!--android:src="@drawable/ic_file"/>-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/transfer"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:text="收钱"/>-->
+    <!--</RelativeLayout>-->
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="8dp"-->
+    <!--android:layout_weight="1">-->
+    <!--<ImageView-->
+    <!--android:id="@+id/yuebao"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:padding="5dp"-->
+    <!--android:src="@drawable/ic_image"/>-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/yuebao"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:text="卡包"/>-->
+    <!--</RelativeLayout>-->
+    <!--</LinearLayout>-->
+
+</LinearLayout>

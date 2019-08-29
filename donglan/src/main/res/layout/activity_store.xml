@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/store_top_bg"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@drawable/img_man" />I
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignBottom="@+id/store_top_bg"
+            android:background="#7fffffff"
+            >
+            <TextView
+                android:id="@+id/store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="动岚健身俱乐部"
+                android:textSize="15sp"
+                android:layout_centerVertical="true"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="15sp"
+                />
+
+            <ImageButton
+                android:id="@+id/ibtn_gps"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/img_gps_white" />
+
+            <ImageButton
+                android:id="@+id/ibtn_call"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/ibtn_gps"
+                android:background="@drawable/img_call_phone" />
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="28dp"
+                android:background="@drawable/circle_button"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:text="加入"
+                android:textColor="#61c5e7"
+                android:textSize="15sp"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/storelist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_top"
+        >
+    </ListView>
+
+
+</RelativeLayout>

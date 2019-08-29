@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:titleText="设置个人信息"></com.cn.danceland.myapplication.view.DongLanTitleView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="身高(cm)"
+        android:textColor="#6d819c"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="请选择您的身高"
+        android:layout_marginTop="10dp"
+        android:textColor="#ff5e3a"
+        android:textSize="16sp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/bg_ruler"
+            android:layout_marginTop="24.0dip"
+            android:layout_height="90dp">
+
+            <com.cn.danceland.myapplication.view.RulerView
+                android:id="@+id/ruler_height"
+                android:layout_width="fill_parent"
+                android:layout_height="90dip"
+
+                app:alphaEnable="false"
+                app:lineColor="#b5c0cd"
+                app:lineMaxHeight="40dp"
+                app:lineMidHeight="30dp"
+                app:lineMinHeight="20dp"
+                app:lineSpaceWidth="10dp"
+                app:lineWidth="2dip"
+                app:maxValue="250.0"
+                app:minValue="80.0"
+                app:perValue="1"
+                app:selectorValue="165.0"
+                app:textColor="@color/black" />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/color_dl_yellow"
+                />
+        </RelativeLayout>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="体重(kg)"
+        android:textColor="#6d819c"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/tv_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="请选择您的体重"
+        android:layout_marginTop="10dp"
+        android:textColor="#ff5e3a"
+        android:textSize="16sp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_ruler"
+        android:layout_marginTop="24.0dip"
+        android:layout_height="90dp">
+
+        <com.cn.danceland.myapplication.view.RulerView
+            android:id="@+id/ruler_weight"
+            android:layout_width="fill_parent"
+            android:layout_height="90dip"
+
+            app:alphaEnable="false"
+            app:lineColor="#b5c0cd"
+            app:lineMaxHeight="40dp"
+            app:lineMidHeight="30dp"
+            app:lineMinHeight="20dp"
+            app:lineSpaceWidth="10dp"
+            app:lineWidth="2dip"
+            app:maxValue="250.0"
+            app:minValue="80.0"
+            app:perValue="1"
+            app:selectorValue="165.0"
+            app:textColor="@color/black" />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/color_dl_yellow"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="1">
+
+        <com.cn.danceland.myapplication.view.CommitButton
+            android:id="@+id/dlbtn_commit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            app:text="保存"></com.cn.danceland.myapplication.view.CommitButton>
+    </LinearLayout>
+
+    <!--
+        <LinearLayout
+            android:id="@+id/text_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text_title"
+            android:layout_marginTop="29dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25dp"
+                    android:text="昵称"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/name"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="20dp"
+                    android:text="性别"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/birthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/sex"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="20dp"
+                    android:text="你的出生年月"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/birthday"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="20dp"
+                    android:text="你的身高"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/eight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/height"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="20dp"
+                    android:text="你的体重"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxEms="6"
+                    android:maxLines="1"
+                    android:text="点击输入昵称"
+                    android:textColor="@color/color_dl_yellow"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_name"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/text_male"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/male_blue"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/text_female"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/text_male"
+                        android:background="@drawable/female_gray"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/text_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/text_male"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:text="1990年12月10日"
+                    android:textColor="@color/color_dl_yellow"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/text_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/text_birthday"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:text="170 cm"
+                    android:textColor="@color/color_dl_yellow"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/text_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/text_height"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:text="55 kg"
+                    android:textColor="@color/color_dl_yellow"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/button"
+            style="@style/BtnCommitStyle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/text_info"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp"
+            android:gravity="center"
+            android:src="@mipmap/login_button"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:textSize="22sp" />-->
+
+</LinearLayout>

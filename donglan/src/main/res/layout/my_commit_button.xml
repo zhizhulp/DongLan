@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rl_btn_commit"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        style="@style/BtnCommitStyle1"
+        android:layout_width="327dp"
+        android:layout_height="72.5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/tv_btn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <!--
+
+        <Button
+            android:id="@+id/body_button"
+            android:layout_width="327dp"
+            android:layout_height="72.5dp"
+            android:layout_marginTop="5dp"
+            style="@style/BtnCommitStyle"
+            android:text="下一步"
+            android:textColor="@color/white"
+            android:textSize="18sp">
+
+        </Button>
+    -->
+
+
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_mianlayout"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/color_white">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="30dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="back"
+            android:paddingLeft="15dp"
+            android:src="@drawable/img_back" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_tiltle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="潜客管理"
+                android:textColor="@color/color_dl_black"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/tv_tiltle_num"
+                android:layout_width="wrap_content"
+                android:textColor="@color/color_dl_black"
+                android:textSize="18sp"
+                android:text=""
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_search_bg"
+        android:focusable="true"
+        android:visibility="gone"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/img_search" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/EtStyle"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:hint="请输入、姓名手机号、会员号"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <ImageButton
+            android:id="@+id/iv_del"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/img_del"
+            android:padding="20dp"
+            android:visibility="gone" />
+    </LinearLayout>
+<!--<LinearLayout
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="40dp">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:text="最近维护"
+            android:textSize="14sp"
+            android:textColor="#ff6600"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_width="50dp"
+            android:layout_marginTop="3dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/color_dl_yellow"/>
+    </LinearLayout>
+</LinearLayout>-->
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/magic_indicator"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="#fff" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+</LinearLayout>

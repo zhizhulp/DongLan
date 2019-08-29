@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_mianlayout"
+   >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_marginLeft="16dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="6dp"
+        app:cardCornerRadius="5dp"
+        android:layout_marginRight="16dp"
+        app:cardElevation="5dp"
+        android:background="@color/white"
+        app:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:id="@+id/rl_parent"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <RelativeLayout
+                android:id="@+id/rl_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/sijiao_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="20节减脂私教"
+                    android:textColor="@color/color_dl_black"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/parent_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/sijiao_title"
+                    android:layout_marginTop="10dp"
+                    android:background="#f5f5f5" />
+
+                <LinearLayout
+                    android:id="@+id/ll_sijiao_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/parent_line">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        style="@style/DL_blueText14Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sijiao_title"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="购买节数："
+                        android:textColor="@color/color_dl_black" />
+
+                    <TextView
+                        android:id="@+id/sijiao_num"
+
+                        style="@style/DL_blueText14Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sijiao_title"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="20节" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_sijiao_shengyu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/ll_sijiao_num">
+                    <TextView
+                        style="@style/DL_blueText14Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sijiao_title"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/color_dl_black"
+                        android:text="剩余节数：" />
+                    <TextView
+                        android:id="@+id/sijiao_shengyu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_sijiao_num"
+                        android:layout_marginLeft="10dp"
+                        android:text="11"
+                       style="@style/DL_blueText14Style"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_sijiao_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/ll_sijiao_shengyu">
+                <TextView
+                    style="@style/DL_blueText14Style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sijiao_title"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/color_dl_black"
+                    android:text="有效期：" />
+                    <TextView
+                        android:id="@+id/sijiao_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_sijiao_shengyu"
+                        android:layout_marginLeft="10dp"
+                        android:text="2017-05-01至2018-05-01"
+                        style="@style/DL_blueText14Style"/>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/sijiao_jiaolian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/sijiao_title"
+                    android:layout_marginRight="10dp"
+                    android:text="上课教练：马云"
+                    android:textColor="@color/color_dl_black"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:id="@+id/sijiao_yuyue"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/img_btn_bg_sell_card"
+                    android:layout_alignBaseline="@+id/sijiao_fangshi"
+                    android:layout_alignBottom="@+id/sijiao_fangshi"
+                    android:layout_alignRight="@+id/sijiao_jiaolian"
+                    android:layout_alignEnd="@+id/sijiao_jiaolian">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="预约"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/sijiao_fangshi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ll_sijiao_num"
+                    android:layout_centerHorizontal="true"
+                    android:text="单人私教"
+                    style="@style/DL_blueText14Style"/>
+                <RelativeLayout
+                    android:id="@+id/sijiao_detail"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/sijiao_yuyue"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/img_btn_bg_sell_card">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="详情"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/down_img"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/ll_sijiao_date"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/down_arow" />
+
+                <ImageView
+                    android:id="@+id/up_img"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/ll_sijiao_date"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/up_arow"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+
+
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

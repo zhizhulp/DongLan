@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:background="@drawable/edit_bg_phone"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="时间"
+        android:paddingLeft="16dp"
+        style="@style/DL_blueText14Style"
+
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_toLeftOf="@+id/tv_pingfen"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginRight="15dp"
+        android:text=""
+        android:layout_marginTop="5dp"
+        style="@style/DL_blueText14Style"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/tv_pingfen"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:text="无法评分"
+        android:textColor="@color/color_dl_yellow"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        />
+</RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:id="@+id/editpro_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.cn.danceland.myapplication.view.DongLanTitleView>
+
+    <com.cn.danceland.myapplication.view.ContainsEmojiEditText
+        android:id="@+id/et_edit"
+        android:layout_below="@+id/editpro_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="8"
+        android:background="@null"
+        android:gravity="top"
+        android:maxLength="100"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="开始填写内容"
+        android:textColorHint="#c0c0c0"
+        />
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BtnCommitStyle"
+        android:layout_below="@+id/et_edit"
+        android:layout_marginTop="30dp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/line1"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@drawable/xuxian"
+    android:layerType="software"
+    />
+    <RelativeLayout
+        android:id="@+id/xuxian_item"
+        android:layout_below="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="54dp">
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/xuxian_item1"
+        android:layout_below="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/dl_gery"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已被预约"
+            android:textColor="@color/white"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name = "title_size">16sp</dimen>
+
+
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--h1-->
+    <dimen name="h1">9sp</dimen>
+    <!--h2-->
+    <dimen name="h2">10sp</dimen>
+    <!--h3-->
+    <dimen name="h3">11sp</dimen>
+    <!--h4-->
+    <dimen name="h4">12sp</dimen>
+    <!--h5-->
+    <dimen name="h5">13sp</dimen>
+    <!--h6-->
+    <dimen name="h6">14sp</dimen>
+    <!--h7-->
+    <dimen name="h7">15sp</dimen>
+    <!--h8-->
+    <dimen name="h8">16sp</dimen>
+    <!--h9-->
+    <dimen name="h9">17sp</dimen>
+    <!--h10-->
+    <dimen name="h10">18sp</dimen>
+    <!--h11-->
+    <dimen name="h11">19sp</dimen>
+    <dimen name="device_name_size">20sp</dimen>
+    <dimen name="result_size">25sp</dimen>
+
+    <dimen name="default_slider_margin_btw_title">20dp</dimen>
+    <dimen name="default_margin_edge_d">15.5dp</dimen>
+    <dimen name="line_chart_layout_height_d">280dp</dimen>
+
+    <!--2.0版本开始-->
+
+    <!--2.0版本结束-->
+</resources>

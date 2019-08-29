@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_mianlayout"
+
+    android:orientation="vertical">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:id="@+id/course_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="课程预约"></com.cn.danceland.myapplication.view.DongLanTitleView>
+
+    <RelativeLayout
+        android:id="@+id/rl_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/course_title"
+        android:background="@color/white">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:tabIndicatorColor="@color/color_dl_yellow"
+            app:tabSelectedTextColor="@color/color_dl_yellow">
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="今日课程"
+
+                />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约会员" />
+
+        </android.support.design.widget.TabLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_tuanke_record"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_tablayout"
+        android:visibility="gone">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/color_white"
+        android:elevation="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center"
+            android:text="备注："
+            android:textColor="@color/color_dl_deep_blue"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="12dp"
+                android:layout_gravity="center"
+                android:layout_height="12dp"
+                android:background="#262626" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="单人私教"
+                android:textColor="@color/color_dl_deep_blue"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="12dp"
+                android:layout_gravity="center"
+                android:layout_height="12dp"
+                android:background="#5AC8FB" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="免费团课"
+                android:textColor="@color/color_dl_deep_blue"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="12dp"
+                android:layout_gravity="center"
+                android:layout_height="12dp"
+                android:background="#D81159" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="小团体"
+                android:textColor="@color/color_dl_deep_blue"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:text="日期"
+        android:textColor="@color/color_dl_black"
+        android:textSize="36sp" />
+
+
+    <com.haibin.calendarview.CalendarLayout
+        android:id="@+id/calendarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/week"
+        android:background="#fff"
+        android:orientation="vertical"
+        app:calendar_content_view_id="@+id/ns_view">
+
+        <com.haibin.calendarview.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            app:current_month_lunar_text_color="@color/transparent"
+            app:current_month_text_color="#333333"
+            app:max_year="2030"
+            app:min_year="2004"
+            app:month_view="com.cn.danceland.myapplication.view.CustomMonthView"
+            app:month_view_show_mode="mode_fix"
+            app:other_month_lunar_text_color="#e1e1e1"
+            app:other_month_text_color="#e1e1e1"
+            app:scheme_text="假"
+            app:scheme_text_color="#333"
+            app:scheme_theme_color="#128c4b"
+            app:selected_lunar_text_color="#fff"
+            app:selected_text_color="#fff"
+            app:selected_theme_color="#6D819C"
+            app:week_background="#fff"
+            app:week_bar_view="com.cn.danceland.myapplication.view.CustomWeekBar"
+            app:week_start_with="sun"
+            app:week_text_color="#e1e1e1"
+            app:week_view="com.cn.danceland.myapplication.view.CustomWeekView"
+
+            app:year_view_day_text_color="#333333"
+            app:year_view_day_text_size="9sp"
+            app:year_view_month_text_color="@color/color_dl_yellow"
+            app:year_view_month_text_size="20sp"
+            app:year_view_scheme_color="#f17706" />
+
+        <!--       <com.haibin.calendarviewproject.group.GroupRecyclerView
+                   android:id="@+id/recyclerView"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@color/content_background"
+                   app:group_background="@color/content_background"
+                   app:group_center="false"
+                   app:group_has_header="false"
+                   app:group_height="42dp"
+                   app:group_padding_left="16dp"
+                   app:group_padding_right="16dp"
+                   app:group_text_color="#555555"
+                   app:group_text_size="14sp" />-->
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/ns_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_nv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </com.haibin.calendarview.CalendarLayout>
+
+    <!--
+        <com.necer.ncalendar.calendar.NCalendar
+            android:id="@+id/nccalendar"
+            android:layout_below="@+id/week"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultCalendar="Week"
+            app:firstDayOfWeek="Sunday"
+            app:selectCircleColor="@color/dl_gery"
+            app:backgroundColor="#f5f5f5"
+            app:selectCircleRadius="30"
+            app:pointColor="@color/color_dl_yellow"
+            app:pointSize="4dp"
+            android:visibility="gone"
+            >
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                ></android.support.v4.widget.NestedScrollView>
+
+        </com.necer.ncalendar.calendar.NCalendar>-->
+    <!--   <View
+           android:layout_width="match_parent"
+           android:layout_height="0.5dp"
+           android:layout_below="@+id/calendarLayout"
+           android:background="#f5f5f5"
+           />-->
+
+</LinearLayout>

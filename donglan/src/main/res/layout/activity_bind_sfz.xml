@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:id="@+id/dl_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:titleText="绑定设备">
+
+    </com.cn.danceland.myapplication.view.DongLanTitleView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9F9F9">
+
+        <LinearLayout
+            android:id="@+id/ll_sfz"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_bg_phone"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <!--       <Spinner
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:entries="@array/phone_codes"
+                       android:layout_gravity="center_vertical"
+                       android:id="@+id/sp_phone">
+
+                   </Spinner>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="证件号"
+                android:textColor="#6d819c"
+                android:textSize="12sp" />
+
+            <com.cn.danceland.myapplication.view.CustomKeyboardEditText
+                android:id="@+id/et_identity_card"
+                style="@style/EtStyle"
+                android:digits="0123456789xX"
+                android:lines="1"
+                android:maxLength="18"
+                android:textColor="@color/color_dl_black"
+                app:xml="@xml/idcard_keyboard"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="16dp"
+                android:background="@null"
+                android:hint="请输入您的身份证后6位"
+
+                android:textSize="15sp" />
+ <!--           <EditText
+                android:id="@+id/et_sfz"
+                style="@style/EtStyle"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="6dp"
+                android:hint="请输入您的手机号"
+
+                android:inputType="phone" />-->
+        </LinearLayout>
+
+
+        <com.cn.danceland.myapplication.view.CommitButton
+            android:id="@+id/dlbtn_commit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+
+            app:text="完成"></com.cn.danceland.myapplication.view.CommitButton>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

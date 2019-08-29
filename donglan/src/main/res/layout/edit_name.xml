@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/dia_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:id="@+id/tv_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编辑昵称"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/tv_ide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请输入身份证号"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textColor="#333"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+
+
+    <com.cn.danceland.myapplication.view.ContainsEmojiEditText
+        android:layout_below="@+id/dia_title"
+        style="@style/EtStyle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/edit_name"
+        android:inputType="textPersonName"
+        android:maxLength="16"
+        android:background="@null"
+        />
+
+
+</RelativeLayout>

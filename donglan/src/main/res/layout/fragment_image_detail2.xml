@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+<!--
+    <com.github.piasy.biv.view.BigImageView
+        android:id="@+id/mBigImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:failureImage="@drawable/loading_img"
+        app:failureImageInitScaleType="center"
+        app:optimizeDisplay="true"
+        />
+-->
+
+    <ImageView
+        android:id="@+id/iv_gif"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent" />
+
+    <com.github.piasy.biv.view.BigImageView
+        android:id="@+id/mBigImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:customSsivId="@+id/mSSIV"
+        >
+        <com.cn.danceland.myapplication.view.MySSIV
+            android:id="@+id/mSSIV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </com.github.piasy.biv.view.BigImageView>
+
+
+</FrameLayout>

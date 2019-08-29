@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/timetable_rl"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:background="@drawable/shade_green_bg">
+
+        <TextView
+            android:id="@+id/tv_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="操厅"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <com.cn.danceland.myapplication.utils.MyListView
+        android:id="@+id/timetable_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timetable_rl"
+        android:dividerHeight="5dp"
+        android:divider="@color/colorGray23"/>
+</RelativeLayout>

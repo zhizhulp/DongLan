@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/tuankedetail_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/dl_gery"
+        >
+        <ImageView
+            android:id="@+id/tuanke_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_back"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="课程详情"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/tuankedetail_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/rl_1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/kecheng_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="单车课"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/kecheng_time"
+                        android:layout_below="@+id/kecheng_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="上课时间：2018-02-03 08:00-09:00"
+                        android:textColor="#c0c0c0"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/kecheng_place"
+                        android:layout_below="@+id/kecheng_time"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="上课场馆：门店名称"
+                        android:textColor="#c0c0c0"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/kecheng_room"
+                        android:layout_below="@+id/kecheng_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="上课场地：单车场地"
+                        android:textColor="#c0c0c0"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        />
+
+
+                </LinearLayout>
+
+                
+                <ImageView
+                    android:id="@+id/kecheng_img"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:scaleType="center"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/line1"
+                android:layout_below="@+id/rl_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#f5f5f5"
+                />
+            
+            <RelativeLayout
+                android:id="@+id/rl_2"
+                android:layout_below="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/kecheng_renshu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前成员(13)"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/black"
+                    />
+            </RelativeLayout>
+
+                <com.cn.danceland.myapplication.utils.NestedExpandaleListView
+                    android:id="@+id/kecheng_ex"
+                    android:layout_below="@+id/rl_2"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </com.cn.danceland.myapplication.utils.NestedExpandaleListView>
+
+
+
+
+            <View
+                android:id="@+id/line2"
+                android:layout_below="@+id/kecheng_ex"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#f5f5f5"
+                />
+            
+            <RelativeLayout
+                android:id="@+id/rl_3"
+                android:layout_below="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <LinearLayout
+                    android:layout_toLeftOf="@+id/kecheng_yuyue"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/rl_3_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/kecheng_1"
+                            android:layout_centerHorizontal="true"
+                            />
+                        <TextView
+                            android:layout_below="@+id/iv_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="全部"
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="2dp"
+                            android:layout_centerHorizontal="true"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="30dp"
+                        android:layout_toLeftOf="@+id/kecheng_yuyue"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/im_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/kecheng_2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/im_1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="2dp"
+                            android:text="分享"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/kecheng_yuyue"
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/dl_gery"
+                    android:layout_alignParentRight="true"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="预约"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:layout_centerInParent="true"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <View
+                android:id="@+id/line3"
+                android:layout_below="@+id/rl_3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#f5f5f5"
+                />
+            <RelativeLayout
+                android:id="@+id/rl_4"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_below="@+id/rl_3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+                <TextView
+                    android:id="@+id/tv_kechengimg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="课程照片"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    />
+                <LinearLayout
+                    android:id="@+id/ll_img"
+                    android:layout_below="@+id/tv_kechengimg"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:id="@+id/img_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="center"
+                        />
+
+                    <ImageView
+                        android:id="@+id/img_2"
+                        android:scaleType="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/img_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="center"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/line4"
+                android:layout_below="@+id/rl_4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#f5f5f5"
+                />
+
+            <RelativeLayout
+                android:id="@+id/rl_5"
+                android:layout_below="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="52dp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    >
+                    <TextView
+                        android:id="@+id/kechengpingfen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="课程评分"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_kechengpingfen"
+                        android:layout_below="@+id/kechengpingfen"
+                        android:layout_marginTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5.0"
+                        android:textColor="@color/dl_gery"
+                        android:textSize="16sp"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    >
+                    <TextView
+                        android:id="@+id/jiaolianpingfen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="教练评分"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/tv_jiaolianpingfen"
+                        android:layout_below="@+id/jiaolianpingfen"
+                        android:layout_marginTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.0"
+                        android:textColor="@color/dl_gery"
+                        android:textSize="16sp"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    >
+                    <TextView
+                        android:id="@+id/fwpingfen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="教练评分"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/tv_fwpingfen"
+                        android:layout_below="@+id/fwpingfen"
+                        android:layout_marginTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.5"
+                        android:textColor="@color/dl_gery"
+                        android:textSize="16sp"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <View
+                android:id="@+id/line5"
+                android:layout_below="@+id/rl_5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#f5f5f5"
+                />
+            <RelativeLayout
+                android:layout_below="@id/line5"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/jieshao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="课程介绍"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_jieshao"
+                    android:layout_below="@+id/jieshao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="      低强度的有氧操 Low Impact Aerobics 在地板上进行的没有跳跃的有氧健美操运动（不包括踏板操）。它也包括一些哑铃练习或地面垫上运动。"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

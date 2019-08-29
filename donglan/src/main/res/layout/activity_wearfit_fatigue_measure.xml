@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_mianlayout"
+    android:orientation="vertical">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:id="@+id/shouhuan_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.cn.danceland.myapplication.view.DongLanTitleView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+
+        <com.cn.danceland.myapplication.view.StepArcView
+            android:id="@+id/arc_measure"
+            android:layout_width="152dp"
+            android:layout_height="152dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/measure_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="0"
+            android:textColor="@color/colorGray8"
+            android:textSize="60sp" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_measure"
+        style="@style/BtnCommitStyle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/fatigue_measure_text"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_margin_edge_d"
+        android:layout_marginRight="@dimen/default_margin_edge_d"
+        android:layout_marginTop="20dp"
+        android:text="@string/fatigue_measure_instructions_text"
+        android:textColor="@color/color_content_text"
+        android:textSize="@dimen/h6" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_margin_edge_d"
+        android:layout_marginRight="@dimen/default_margin_edge_d"
+        android:layout_marginTop="10dp"
+        android:text="@string/fatigue_measure_instructions_hint_text"
+        android:textColor="@color/colorGray9"
+        android:textSize="@dimen/h6" />
+
+</LinearLayout>

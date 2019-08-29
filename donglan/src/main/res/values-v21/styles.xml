@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/menu_bg</item>
+        <item name="colorPrimaryDark">@color/dl_gery</item>
+        <item name="colorAccent">@color/color_dl_yellow</item>
+        <item name="android:navigationBarColor">#000</item>
+
+       <!-- Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色
+        <item name="android:statusBarColor">@android:color/transparent</item>-->
+    </style>
+</resources>

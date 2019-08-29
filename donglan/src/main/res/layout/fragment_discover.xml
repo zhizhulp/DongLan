@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:myc="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/status_bar_iv"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="@color/colorGray24" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/status_bar_iv"
+        android:orientation="vertical">
+
+        <!--  <com.cn.danceland.myapplication.view.SwitchButton
+              android:id="@+id/btn_switchbutton"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="20dp"
+              android:padding="10dp"
+              android:paddingLeft="30dp"
+              android:paddingRight="30dp"
+              myc:bg_bitmap="@drawable/switch_btn_bg"
+              myc:btn_bitmap="@drawable/switch_btn"
+              myc:textOff="关注"
+              myc:textOn="精选"
+              myc:textSize_ab="16sp" />-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignParentTop="true"
+            android:background="#fff"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/iv_add_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18dp"
+                android:background="@drawable/img_add_friends" />
+
+            <!--       <com.viewpagerindicator.TabPageIndicator
+                       android:id="@+id/id_indicator"
+                       android:layout_width="0dp"
+                       android:layout_height="40dp"
+                       android:layout_gravity="center"
+                       android:layout_marginLeft="30dp"
+                       android:layout_marginRight="30dp"
+                       android:layout_weight="1"
+                       android:background="@android:color/transparent"
+                       android:visibility="gone"/>
+       -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="发现"
+                android:textColor="@color/colorGray21"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/iv_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/img_photo" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line" />
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/magic_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@color/white" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/id_viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
+
+</RelativeLayout>

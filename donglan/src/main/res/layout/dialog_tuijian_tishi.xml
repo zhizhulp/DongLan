@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="会员奖励介绍" />
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:text="很荣幸成为我俱乐部会员：
+    推荐您的亲友成为我俱乐部会员，每推荐成功一位亲友，您都将获得我俱乐部的积分奖励，兑换指定奖品，他（她）可以是您的亲人、朋友、同事、爱人，您送出去的是一份选择健康的机会" />
+
+        <Button
+            android:id="@+id/btn_commit"
+            style="@style/BtnCommitStyle"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="确认" />
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/cb_tj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#333"
+                android:layout_height="wrap_content" android:text="不再提示"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

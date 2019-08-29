@@ -1,0 +1,162 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'org.greenrobot.greendao'
+android {
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    dexOptions {//缩短构建时间
+        maxProcessCount 8
+        javaMaxHeapSize "2g"
+        preDexLibraries true
+    }
+
+    useLibrary 'org.apache.http.legacy'
+    signingConfigs {
+        config {
+            keyPassword 'donglanyg'
+            storeFile file('D:/key.jks')
+            storePassword 'donglanyg'
+            keyAlias 'key0'
+        }
+        debug {
+            storeFile file('D:/key.jks')
+            storePassword 'donglanyg'
+            keyAlias 'key0'
+            keyPassword 'donglanyg'
+        }
+    }
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    greendao {
+        schemaVersion 3//指定数据库版本号，更新操作会用到;
+    }
+    defaultConfig {
+        applicationId "com.cn.danceland.myapplication"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 17
+        versionName "2.1.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.config
+        multiDexEnabled true
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            buildConfigField "String", "HOST", "\"http://wx.dljsgw.com/\""
+            resValue "string", "app_name", "动岚健身"
+        }
+        releaseB {
+            signingConfig signingConfigs.config
+            buildConfigField "String", "HOST", "\"http://wx.dljsgw.com/\""
+            resValue "string", "app_name", "动岚健身科技"
+        }
+        debug {
+            signingConfig signingConfigs.config
+            buildConfigField "String", "HOST", "\"http://192.168.1.66:8003/\""
+            resValue "string", "app_name", "动岚健身"
+        }
+    }
+    repositories {
+        google()
+        flatDir { dirs 'libs' }
+        maven { url uri("${rootProject.projectDir}/repo") }
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
+        maven { url "http://dl.bintray.com/piasy/maven" }
+        maven { url "https://jitpack.io" }
+        jcenter()
+        maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+    }
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    api 'com.handmark.pulltorefresh.library:pulltorefresh:1.0'
+    api 'com.vondear.rxtools:rxtools:1.0'
+    api 'cn.jzvd:jiaozivideo:1.0'
+    api 'lecho.lib.hellocharts:hellocharts:1.0'
+    api project(':ui')
+    //    api 'com.tencent.qcloud.ui:ui:1.0'
+    //    api 'com.tencent.qcloud.presentation:presentation:1.0'
+    //    api 'com.tencent.qcloud.common:common:1.0'
+    //    api 'com.tencent.qcloud.tlslibrary:tlslibrary:1.0'
+    api files('libs/volley-1.0.19.jar')
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+    api 'com.android.support:support-v4:26.+'
+    api 'de.hdodenhof:circleimageview:2.1.0'
+    api 'com.android.support:cardview-v7:26.0.0-alpha1'
+    api 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    api 'com.github.bumptech.glide:glide:4.3.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
+    api 'com.android.support:cardview-v7:26.0.0-alpha1'
+    api 'org.greenrobot:greendao:3.2.2'
+    api 'org.greenrobot:greendao-generator:3.2.2'
+    api 'org.greenrobot:eventbus:3.1.1'
+    api 'com.android.support:multidex:1.0.0'
+    api 'com.squareup.picasso:picasso:2.5.2'
+    api 'com.zhihu.android:matisse:0.4.3'
+    api 'q.rorbin:badgeview:1.1.3'
+    api 'com.necer.ncalendar:ncalendar:2.4.5'
+    api 'com.github.codbking:CalendarExaple:v1.0.0'
+    api 'com.weigan:loopView:0.1.2'
+    api 'cjt.library.wheel:camera:1.1.9'
+    api 'me.leolin:ShortcutBadger:1.1.21@aar'
+    api 'com.ms-square:expandableTextView:0.1.4'
+    api 'com.github.dfqin:grantor:2.1.0'
+    api 'com.contrarywind:Android-PickerView:4.1.6'
+    api files('libs/pldroid-shortvideo-1.14.0.jar')
+    //七牛短视频  发布动态用到压缩视频
+    api 'com.umeng.sdk:common:latest.integration'
+    //友盟统计
+    api 'com.umeng.sdk:analytics:latest.integration'
+    api 'com.danikula:videocache:2.7.0'
+    api 'com.davemorrissey.labs:subsampling-scale-image-view:3.9.0'
+    api 'com.github.piasy:BigImageViewer:1.4.5'
+    // load with glide
+    api 'com.github.piasy:GlideImageLoader:1.4.5'
+    // progress pie indicator
+    api 'com.github.piasy:ProgressPieIndicator:1.4.5'
+    api 'com.github.razerdp:BasePopup:1.9.4'
+    api 'com.github.hani-momanii:SuperNova-Emoji:1.1'
+    api 'com.android.support:appcompat-v7:25.3.1'
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    api 'com.android.support:design:26.0.0-alpha1'
+    api('com.github.hotchemi:permissionsdispatcher:3.1.0') {
+        exclude module: "support-v13"
+    }
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
+    api 'com.github.ome450901:SimpleRatingBar:1.3.6'
+    api 'com.github.hackware1993:MagicIndicator:1.5.0'
+    api 'com.github.pinguo-zhouwei:MZBannerView:v2.0.0'
+    api 'top.zibin:Luban:1.1.3'
+    api files('libs/umeng-share-core-6.9.3.jar')
+    //    compile files('libs/umeng-share-QQ-si mplify-6.9.3.jar')
+    api files('libs/umeng-share-wechat-simplify-6.9.3.jar')
+    api files('libs/umeng-share-sina-simplify-6.9.3.jar')
+    api files('libs/umeng-shareboard-widget-6.9.3.jar')
+    api files('libs/umeng-sharetool-6.9.3.jar')
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
+    //api 'com.haibin:calendarview:3.5.5'
+    //adapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation( name: 'calendarview', ext: 'aar')
+}

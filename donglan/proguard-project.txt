@@ -1,0 +1,98 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+-keep class com.alipay.android.app.IAlixPay{*;}
+-keep class com.alipay.android.app.IAlixPay$Stub{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
+-keep class com.alipay.sdk.app.PayTask{ public *;}
+-keep class com.alipay.sdk.app.AuthTask{ public *;}
+-keep class com.alipay.sdk.app.H5PayCallback {
+    <fields>;
+    <methods>;
+}
+-keep class com.alipay.android.phone.mrpc.core.** { *; }
+-keep class com.alipay.apmobilesecuritysdk.** { *; }
+-keep class com.alipay.mobile.framework.service.annotation.** { *; }
+-keep class com.alipay.mobilesecuritysdk.face.** { *; }
+-keep class com.alipay.tscenter.biz.rpc.** { *; }
+-keep class org.json.alipay.** { *; }
+-keep class com.alipay.tscenter.** { *; }
+-keep class com.ta.utdid2.** { *;}
+-keep class com.ut.device.** { *;}
+
+
+-keep class com.tencent.mm.opensdk.** {
+*;
+}
+-keep class com.tencent.wxop.** {
+*;
+}
+-keep class com.tencent.mm.sdk.** {
+*;
+}
+
+-keep class com.tencent.**{*;}
+-dontwarn com.tencent.**
+
+-keep class tencent.**{*;}
+-dontwarn tencent.**
+
+-keep class qalsdk.**{*;}
+-dontwarn qalsdk.**
+
+
+#------------------腾讯云通信----------------------------------
+
+-keepclass com.tencent.**{*;}
+
+-dontwarncom.tencent.**
+
+-keepclass tencent.**{*;}
+
+-dontwarntencent.**
+
+-keepclass qalsdk.**{*;}
+
+-dontwarnqalsdk.**
+
+#------------------小米推送----------------------------------
+
+-keepclass com.sinosoft.nanniwan.im.imutil.MiPushMessageReceiver {*;}
+
+-dontwarncom.xiaomi.push.**
+
+#------------------华为推送----------------------------------
+
+-keepclass com.huawei.android.**{*;}
+
+-dontwarncom.huawei.android.**
+
+-keepclass com.baidu.mapapi.**{*;}
+
+-dontwarncom.baidu.mapapi.**
+
+#------------------java.nio------------------------
+
+-dontwarnorg.codehaus.**
+
+-dontwarnjava.nio.**
+
+-dontwarnjava.lang.invoke.**

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.cn.danceland.myapplication.view.DongLanTitleView
+        android:id="@+id/wearfitequipment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.cn.danceland.myapplication.view.DongLanTitleView>
+
+    <ImageView
+        android:id="@+id/img_shouhuan"
+        android:layout_below="@+id/wearfitequipment_title"
+        android:layout_width="175dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/shouhuan"
+        />
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wearfitequipment_title"
+        android:textSize="18sp"
+        android:textColor="@color/color_dl_yellow"
+        android:layout_marginTop="255dp"
+        android:layout_centerHorizontal="true"
+        android:text="未绑定"
+        />
+    <Button
+        android:id="@+id/btn_bind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BtnCommitStyle"
+        android:text="绑定手环"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        />
+</RelativeLayout>

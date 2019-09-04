@@ -53,7 +53,6 @@ public class ScanerCodeActivity extends ActivityScanerCode {
                     if (resultA != null && resultA.length > 1) {
                         if (resultA[2].equals("13")) {
                             startActivity(new Intent(ScanerCodeActivity.this, ScanerCodeDetailActivity.class).putExtra("message", result));
-                            finish();
                         } else {
                             showConfirmDialog(result);
                         }

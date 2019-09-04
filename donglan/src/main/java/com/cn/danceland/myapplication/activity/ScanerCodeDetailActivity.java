@@ -172,7 +172,7 @@ public class ScanerCodeDetailActivity extends BaseActivity {
                         if (context != null) {//设置图片
                             RequestOptions options = new RequestOptions().placeholder(R.drawable.img_donglan_loading);
                             if (memberData.getImg_url() != null && memberData.getImg_url().length() > 0) {
-                                Glide.with(context).load(memberData.getImg_url()).apply(options).into(icon_iv);
+                                Glide.with(context).load(memberData.getAvatar_url()).apply(options).into(icon_iv);
                             }
                         }
                         title.setTitle(memberData.getEnter() ? "扫码离场" : "扫码入场");
@@ -300,11 +300,13 @@ public class ScanerCodeDetailActivity extends BaseActivity {
             @Override
             public void ok_bt(int dialogOKB) {
                 dialog.dismiss();
+                finish();
             }
 
             @Override
             public void cancle_bt(int btn_cancel) {
                 dialog.dismiss();
+                finish();
             }
         });
     }
